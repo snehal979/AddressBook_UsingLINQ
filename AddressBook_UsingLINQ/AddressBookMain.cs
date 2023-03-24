@@ -20,6 +20,37 @@ namespace AddressBook_UsingLINQ
             personDatas.Add(new PersonData() { Id=4, FirstName="Vaibhav", LastName="Bansod", Address="PLOT6", City ="Chandrapur", State="MP", Zip="134377", PhoneNum="1234567890", Email="vaibhav@gmail" });
             personDatas.Add(new PersonData() { Id=5, FirstName="Sonakshi", LastName="Vanjari", Address="PLOT7", City ="Sindewahi", State="UP", Zip="134343", PhoneNum="1234567890", Email="sona@gmail" });
             personDatas.Add(new PersonData() { Id=6, FirstName="Hemlata", LastName="Bekare", Address="PLOT8", City ="Nagpur", State="MP", Zip="134344", PhoneNum="1234567890", Email="hem@gmail" });
+            Display(personDatas);
+        }
+        public void Display(List<PersonData> personDatas)
+        {
+            foreach (var data in personDatas)
+            {
+                Console.WriteLine(data.FirstName+" "+data.LastName+" "+data.Address+" "+data.City+" "+data.State+" "+data.Zip+" "+data.PhoneNum+" "+data.Email);
+            }
+        }
+        ///// <summary>
+        ///// Uc4 update Contact by using FirstName //
+        ///// </summary>
+        public void UpdateContact(List<PersonData> personDatas)
+        {
+            Console.WriteLine("Entr the name");
+            string serachName = Console.ReadLine();
+            var validCustomers = personDatas.Where(c => c.FirstName==serachName);
+            foreach (PersonData data in validCustomers)
+            {
+                Console.WriteLine("Enter the LastName");
+                data.LastName=Console.ReadLine();
+                Console.WriteLine("Enter the Address");
+                data.Address=Console.ReadLine();
+                Console.WriteLine("Enter the City");
+                data.City=Console.ReadLine();
+                Console.WriteLine("Enter the State");
+                data.State=Console.ReadLine();
+                Console.WriteLine("Enter the Zip");
+                data.Zip=Console.ReadLine();
+            }
+            Display(personDatas);
         }
     }
 }
