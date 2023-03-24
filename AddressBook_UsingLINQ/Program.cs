@@ -11,7 +11,7 @@
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("1.Add contact 2.Update data 3.Exist");
+                Console.WriteLine("1.Add contact 2.Update data 3.Delect 4Exist");
                 // Uc1 LINQ Object Create with the help of collection
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
@@ -23,6 +23,9 @@
                         book.UpdateContact(personDatas);
                         break;
                     case 3:
+                        book.Remove(personDatas);
+                        break;
+                    case 4:
                         flag = false;
                         Console.WriteLine("Exist");
                         break;

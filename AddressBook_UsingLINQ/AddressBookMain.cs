@@ -52,5 +52,24 @@ namespace AddressBook_UsingLINQ
             }
             Display(personDatas);
         }
+        /// <summary>
+        /// UC 5 Delect contact
+        /// </summary>
+        /// <param name="personDatas"></param>
+        public void Remove(List<PersonData> personDatas)
+        {
+            Console.WriteLine("Enter the name is present or not");
+            string Names = Console.ReadLine();
+            try
+            {
+                personDatas.RemoveAll(e => (e.FirstName == Names));
+
+                Display(personDatas);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
