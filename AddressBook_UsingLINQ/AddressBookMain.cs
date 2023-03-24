@@ -100,7 +100,7 @@ namespace AddressBook_UsingLINQ
         //SELECT COUNT(*) FROM AddressBookTable WHERE state LIKE'UP';
         /// </summary>
         /// <param name="personDatas"></param>
-        public void RetriveByCityOrStateCount(List<PersonData> personDatas)
+        public void RetriveByCityOrStateCounts(List<PersonData> personDatas)
         {
             Console.WriteLine("choice what you want ");
             int num = Convert.ToInt32(Console.ReadLine());
@@ -115,6 +115,34 @@ namespace AddressBook_UsingLINQ
                     Console.WriteLine("total count of state "+resultState);
                     break;
             }
+        }
+        /// <summary>
+        /// UC 8 Retrive data sort by alphabatical word
+        /// SELECT * FROM AddressBookTable WHERE city='Nagpur' ORDER BY firstname ASC;
+        /// </summary>
+        /// <param name="personDatas"></param>
+        public void RetrivedataSorted(List<PersonData> personDatas)
+        {
+            Console.WriteLine("choice what you want ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            switch (num)
+            {
+                case 1:
+                    var cityOrder = personDatas.Where(x => x.City =="Nagpur").OrderBy(x => x.FirstName);
+                    foreach (var data in cityOrder)
+                    {
+                        Console.WriteLine(data.FirstName);
+                    }
+                    break;
+                case 2:
+                    var stateOrder = personDatas.Where(x => x.State =="UP").OrderBy(x => x.FirstName);
+                    foreach (var data in stateOrder)
+                    {
+                        Console.WriteLine(data.FirstName);
+                    }
+                    break;
+            }
+
         }
     }
 }
