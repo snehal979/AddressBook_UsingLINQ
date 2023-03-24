@@ -11,7 +11,7 @@
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("1.Add contact 2.Update data 3.Delect  4.Retrive Data by City or State 5.Exist");
+                Console.WriteLine("1.Add contact 2.Update data 3.Delect  4.Retrive Data by City or State 5.RetriveByCityOrStateCount 6.Exist");
                 // Uc1 LINQ Object Create with the help of collection
                 int num = Convert.ToInt32(Console.ReadLine());
                 switch (num)
@@ -29,6 +29,9 @@
                         book.RetriveByCityOrState(personDatas);
                         break;
                     case 5:
+                        book.RetriveByCityOrStateCount(personDatas);
+                        break;
+                    case 6:
                         flag = false;
                         Console.WriteLine("Exist");
                         break;

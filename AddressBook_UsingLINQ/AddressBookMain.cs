@@ -94,5 +94,27 @@ namespace AddressBook_UsingLINQ
                     break;
             }
         }
+        /// <summary>
+        /// Uc7 Count data by City or State
+        /// //SELECT COUNT(*) FROM AddressBookTable WHERE city LIKE'Nagpur';
+        //SELECT COUNT(*) FROM AddressBookTable WHERE state LIKE'UP';
+        /// </summary>
+        /// <param name="personDatas"></param>
+        public void RetriveByCityOrStateCount(List<PersonData> personDatas)
+        {
+            Console.WriteLine("choice what you want ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            switch (num)
+            {
+                case 1:
+                    var resultCity = (from i in personDatas where i.City == "Nagpur" select i).Count();
+                    Console.WriteLine("Total count of city "+resultCity);
+                    break;
+                case 2:
+                    var resultState = (from i in personDatas where i.State == "UP" select i).Count();
+                    Console.WriteLine("total count of state "+resultState);
+                    break;
+            }
+        }
     }
 }
