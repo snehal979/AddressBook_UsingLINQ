@@ -71,5 +71,28 @@ namespace AddressBook_UsingLINQ
                 Console.WriteLine(ex.Message);
             }
         }
+        /// <summary>
+        /// Uc 6 Retrive data from linq to object by city or state     
+        //SELECT* FROM AddressBookTable WHERE city='Nagpur';
+        //SELECT* FROM AddressBookTable WHERE state='Maha';
+        /// </summary>
+        /// <param name="personDatas"></param>
+        public void RetriveByCityOrState(List<PersonData> personDatas)
+        {
+
+            Console.WriteLine("choice what you want ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            switch (num)
+            {
+                case 1:
+                    var resultCity = from i in personDatas where i.City == "Nagpur" select i;
+                    Display(resultCity.ToList());
+                    break;
+                case 2:
+                    var resultState = from i in personDatas where i.State == "UP" select i;
+                    Display(resultState.ToList());
+                    break;
+            }
+        }
     }
 }
