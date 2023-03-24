@@ -29,7 +29,7 @@
                         book.RetriveByCityOrState(personDatas);
                         break;
                     case 5:
-                        book.RetriveByCityOrStateCount(personDatas);
+                        book.RetriveByCityOrStateCounts(personDatas);
                         break;
                     case 6:
                         flag = false;
