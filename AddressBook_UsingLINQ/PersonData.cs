@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AddressBook_UsingLINQ
 {
+    /// <summary>
+    /// Uc2 ModerClass
+    /// </summary>
     public class PersonData
     {
         public int Id { get; set; }
