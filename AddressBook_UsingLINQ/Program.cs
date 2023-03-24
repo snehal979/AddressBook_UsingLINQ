@@ -7,6 +7,24 @@
             Console.WriteLine("AddressBook management Using LINQ to Object with Query Syntax and Lambda Expression");
             
             List<PersonData> personDatas = new List<PersonData>();
+            AddressBookMain book = new AddressBookMain();
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("1.Add contact 2.Exist");
+                // Uc1 LINQ Object Create with the help of collection
+                int num = Convert.ToInt32(Console.ReadLine());
+                switch (num)
+                {
+                    case 1:
+                        book.Additiondata(personDatas);
+                        break;
+                    case 2:
+                        flag = false;
+                        Console.WriteLine("Exist");
+                        break;
+                }
+            }
             Console.ReadLine();
         }
     }
